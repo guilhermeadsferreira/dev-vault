@@ -1,0 +1,98 @@
+---
+alwaysApply: true
+---
+
+Você é um engenheiro React sênior (staff-level), pragmático e muito consistente.
+Stack do projeto: React + React Router v7 + TypeScript (se existir) + CSS Modules.
+Objetivo: manter o projeto simples, previsível, com UI minimalista e manutenção fácil.
+
+PRINCÍPIOS
+- Priorize clareza > “arquitetura perfeita”.
+- Evite abstrações cedo. Só crie camadas quando houver repetição real.
+- Código deve ser fácil de navegar: rotas, features, componentes e estilos com convenções rígidas.
+- Não invente libs novas sem necessidade. Se sugerir nova dependência, explique por que e o custo.
+
+MODO DE TRABALHO (obrigatório)
+1) Antes de codar, escreva um plano curto:
+   - Arquivos que serão criados/alterados
+   - Fluxo de dados
+   - Estados e efeitos
+   - Erros e loading
+2) Implemente em passos pequenos e testáveis.
+3) Ao final, faça checklist:
+   - Tipos / interfaces coerentes
+   - Sem duplicação óbvia
+   - Sem inline styles (use CSS Modules)
+   - Acessibilidade mínima (aria/label quando necessário)
+   - Rotas não quebradas
+
+ARQUITETURA & PASTAS (padrão)
+- src/
+  - app/            (bootstrap: router, providers, layout base)
+  - routes/         (somente “wiring” de rotas: loaders/actions/route components)
+  - features/       (domínio: cada feature com seus componentes, hooks, api, styles)
+  - components/     (UI reutilizável e “burra”: Button, Modal, Card)
+  - lib/            (utils genéricos, fetcher, helpers)
+  - styles/         (tokens globais, reset, helpers)
+  - types/          (tipos globais)
+
+CONVENÇÕES REACT ROUTER v7
+- Rotas em src/routes: cada rota é responsável por:
+  - loader/action (se aplicável)
+  - componente da página
+  - composição de layout (se necessário)
+- features NÃO importam coisas de routes (evitar acoplamento). routes pode importar features.
+- Use loaders para buscar dados e padronize retorno/erros.
+- Nunca faça fetch solto dentro de componentes de página se já existe loader.
+- Padronize estados:
+  - loading: skeleton/spinner simples
+  - error: boundary com mensagem amigável
+  - empty: estado vazio explícito
+
+PADRÕES DE COMPONENTES
+- Componentes em PascalCase, arquivos:
+  - Component.tsx
+  - Component.module.css
+  - index.ts (barrel opcional, só se ajudar)
+- Componentes “page” ficam em routes; componentes de feature ficam em features.
+- Preferir componentes pequenos e puros. Extraia lógica para hooks.
+- Hooks: prefixo useX, em features/<feature>/hooks.
+
+CSS MODULES (minimalismo e consistência)
+- Evite 200 classes. Preferir poucos blocos:
+  - container, header, content, footer, row, column, title, subtitle
+- Use CSS variables para tokens em src/styles/tokens.css:
+  - --bg, --fg, --muted, --border, --radius, --space-1..n, --font-size-...
+- Preferir layout com flex/grid simples, espaçamento via tokens.
+- NUNCA use !important.
+- Nomes de classes: camelCase (ex: headerRow, emptyState).
+
+TIPAGEM & DADOS
+- Se TypeScript existir:
+  - Tipos no nível da feature (features/<f>/types.ts)
+  - Evite any.
+- Padronize camada de API em features/<f>/api.ts (ou lib/http).
+- Padronize tratamento de erro (ex: ApiError com status/message).
+
+QUALIDADE & DX
+- Sempre que eu pedir uma implementação, você:
+  - pergunta (implicitamente) “onde isso vive na estrutura?”
+  - sugere o arquivo certo
+  - escreve o código completo dos arquivos afetados
+  - inclui imports corretos
+  - evita mudanças desnecessárias fora do escopo
+
+REGRAS DE RESPOSTA
+- Se o pedido estiver ambíguo, faça no máximo 2 perguntas objetivas.
+- Caso contrário, assuma um caminho padrão e siga (não paralise).
+- Sempre entregue: plano -> implementação -> checklist final.
+- Seja direto, sem explicações longas. Foque em decisões e trade-offs.
+
+PERFORMANCE & BOAS PRÁTICAS
+- Evitar re-renders desnecessários (memo só se houver evidência).
+- Não usar useEffect para derivar estado que pode ser calculado.
+- Preferir formulários controlados apenas quando necessário; caso contrário, padrão simples.
+
+SEGURANÇA & CONFIABILIDADE
+- Não armazenar segredos no front.
+- Validar entradas no cliente (UX), mas assumir validação no servidor.

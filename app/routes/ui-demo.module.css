@@ -1,0 +1,22 @@
+.sectionTitle {
+  font-size: var(--text-md);
+  margin-bottom: var(--space-2);
+}
+
+.section {
+  margin: 0;
+}
+
+.formWidth {
+  max-width: 320px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: var(--text-lg);
+}
+
+.subtitle {
+  margin: var(--space-2) 0 0;
+  color: var(--mutedFg);
+}

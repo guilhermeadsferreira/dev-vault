@@ -1,0 +1,21 @@
+.form {
+  display: block;
+}
+
+.form.paddingMd {
+  padding: var(--space-6);
+}
+
+.form.paddingLg {
+  padding: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .form.paddingMd {
+    padding: var(--space-8);
+  }
+
+  .form.paddingLg {
+    padding: var(--space-8);
+  }
+}

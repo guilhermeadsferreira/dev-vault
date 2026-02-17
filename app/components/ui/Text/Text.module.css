@@ -1,0 +1,38 @@
+.text {
+  font-family: var(--font-sans);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.text.variantTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.text.variantSubtitle {
+  font-size: var(--text-sm);
+  color: var(--mutedFg);
+  text-wrap: balance;
+}
+
+.text.variantBody {
+  font-size: var(--text-md);
+}
+
+.text.variantMuted {
+  font-size: var(--text-sm);
+  color: var(--mutedFg);
+}
+
+.text.alignStart {
+  text-align: start;
+}
+
+.text.alignCenter {
+  text-align: center;
+}
+
+.text.alignEnd {
+  text-align: end;
+}

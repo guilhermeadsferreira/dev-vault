@@ -1,0 +1,55 @@
+.box {
+  /* base: só aplica o que for escolhido */
+}
+
+/* padding */
+.box.paddingNone {
+  padding: 0;
+}
+
+.box.paddingSm {
+  padding: var(--space-2);
+}
+
+.box.paddingMd {
+  padding: var(--space-4);
+}
+
+.box.paddingLg {
+  padding: var(--space-6);
+}
+
+/* border */
+.box.border {
+  border: 1px solid var(--border);
+}
+
+/* background */
+.box.backgroundDefault {
+  background-color: var(--bg);
+}
+
+.box.backgroundMuted {
+  background-color: var(--muted);
+}
+
+.box.backgroundCard {
+  background-color: var(--card);
+}
+
+/* radius */
+.box.radiusNone {
+  border-radius: 0;
+}
+
+.box.radiusSm {
+  border-radius: var(--radius-sm);
+}
+
+.box.radiusMd {
+  border-radius: var(--radius-md);
+}
+
+.box.radiusLg {
+  border-radius: var(--radius-lg);
+}

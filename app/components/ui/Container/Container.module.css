@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  max-width: var(--container-lg);
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container.sizeSm {
+  max-width: var(--container-sm);
+}
+
+.container.sizeMd {
+  max-width: var(--container-md);
+}
+
+.container.sizeLg {
+  max-width: var(--container-lg);
+}
+
+.container.sizeXl {
+  max-width: var(--container-xl);
+}
+
+.container.fluid {
+  max-width: none;
+}

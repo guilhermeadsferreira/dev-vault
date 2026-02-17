@@ -1,0 +1,25 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 14px;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  letter-spacing: var(--tracking-normal);
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focusRing);
+}
