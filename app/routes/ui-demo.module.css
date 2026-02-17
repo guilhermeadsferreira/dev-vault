@@ -1,10 +1,46 @@
-.sectionTitle {
-  font-size: var(--text-md);
-  margin-bottom: var(--space-2);
-}
-
 .section {
   margin: 0;
+  padding-bottom: var(--space-6);
+}
+
+.section:last-child {
+  padding-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-2);
+  color: var(--fg);
+}
+
+.docWhen {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--mutedFg);
+  line-height: 1.5;
+}
+
+.docHow {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--fg);
+  font-family: ui-monospace, monospace;
+  background-color: var(--muted);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.docVariants {
+  margin-top: var(--space-4);
+}
+
+.docVariantsLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+  color: var(--mutedFg);
 }
 
 .formWidth {
@@ -13,10 +49,13 @@
 
 .pageTitle {
   margin: 0;
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--fg);
 }
 
 .subtitle {
   margin: var(--space-2) 0 0;
+  font-size: var(--text-md);
   color: var(--mutedFg);
 }
