@@ -1,6 +1,6 @@
 import { redirect, useFetcher } from "react-router";
 import { Container } from "~/components/ui/Container";
-import { LoginForm } from "~/features/login";
+import { LoginForm } from "~/modules/login";
 import { getAuth } from "~/lib/session.server";
 
 export function meta() {

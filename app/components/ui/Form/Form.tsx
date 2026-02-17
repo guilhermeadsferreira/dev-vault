@@ -1,5 +1,5 @@
 import type React from "react";
-import { cn } from "~/lib/cn";
+import { cn } from "~/lib/utils";
 import { Stack } from "~/components/ui/Stack";
 import styles from "./Form.module.css";
 

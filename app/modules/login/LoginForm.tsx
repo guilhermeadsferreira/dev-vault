@@ -1,7 +1,7 @@
 import type React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { cn } from "~/lib/cn";
+import { cn } from "~/lib/utils";
 import { Box } from "~/components/ui/Box";
 import { Button } from "~/components/ui/Button";
 import { Card } from "~/components/ui/Card";

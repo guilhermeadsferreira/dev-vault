@@ -1,5 +1,5 @@
 import type React from "react";
-import { cn } from "~/lib/cn";
+import { cn } from "~/lib/utils";
 import styles from "./Text.module.css";
 
 type TextVariant = "title" | "subtitle" | "body" | "muted";

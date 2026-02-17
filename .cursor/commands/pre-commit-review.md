@@ -15,14 +15,14 @@ Revisar as mudanças do repositório usando a persona de engenheiro React sênio
    Para cada arquivo/diff relevante (TS, TSX, CSS, rotas), avalie:
 
    **Arquitetura & convenções**
-   - [ ] Arquivos no lugar certo? (routes vs features vs components vs lib)
-   - [ ] features não importam de routes?
+   - [ ] Arquivos no lugar certo? (routes vs modules vs components vs lib)
+   - [ ] modules não importam de routes?
    - [ ] Rotas só fazem wiring (loaders/actions), sem lógica de negócio?
 
    **Componentes**
    - [ ] Componentes pequenos e puros?
-   - [ ] Hooks com prefixo useX, em features/<f>/hooks?
-   - [ ] Page components em routes, feature components em features?
+   - [ ] Hooks com prefixo useX, em modules/<m>/hooks?
+   - [ ] Page components em routes, module components em modules?
 
    **Estilos**
    - [ ] CSS Modules (sem inline styles)?

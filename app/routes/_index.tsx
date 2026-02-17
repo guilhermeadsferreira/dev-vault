@@ -1,9 +1,9 @@
 import { redirect, useFetcher, useLoaderData } from "react-router";
 import { Container } from "~/components/ui/Container";
-import { HomePage } from "~/features/home";
-import { LoginForm } from "~/features/login";
+import { HomePage } from "~/modules/home";
+import { LoginForm } from "~/modules/login";
 import { getAuth, serializeAuth, clearAuth } from "~/lib/session.server";
-import { loginSchema } from "~/features/login/schema";
+import { loginSchema } from "~/modules/login/schema";
 
 export function meta() {
   return [

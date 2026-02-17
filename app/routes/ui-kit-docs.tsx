@@ -1,4 +1,4 @@
-import type { Route } from "./+types/ui-demo";
+import type { Route } from "./+types/ui-kit-docs";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -12,7 +12,7 @@ import { Field, Input } from "~/components/ui/Field";
 import { Form, FormGroup } from "~/components/ui/Form";
 import { FormField } from "~/components/ui/FormField";
 import { Link } from "~/components/ui/Link";
-import styles from "./ui-demo.module.css";
+import styles from "./ui-kit-docs.module.css";
 
 const formFieldSchema = z.object({
   name: z.string().min(1, "Nome obrigatório"),
@@ -52,7 +52,7 @@ export function meta(_args: Route.MetaArgs) {
   ];
 }
 
-export default function UiDemo() {
+export default function UiKitDocs() {
   const { control } = useForm<FormFieldFormValues>({
     resolver: zodResolver(formFieldSchema),
     defaultValues: { name: "", email: "" },
@@ -322,7 +322,7 @@ const { control } = useForm({ resolver: zodResolver(schema) });
           <Stack direction="row" gap="md">
             <Link href="/">Home</Link>
             <Link href="/login">Login</Link>
-            <Link href="/ui-demo">UI Demo</Link>
+            <Link href="/ui-kit-docs">UI Kit Docs</Link>
           </Stack>
         </DocSection>
       </Stack>

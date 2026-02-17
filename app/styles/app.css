@@ -1,6 +1,6 @@
 /* Design system tokens e globals (aplicados primeiro) */
-@import "./styles/tokens.css";
-@import "./styles/globals.css";
+@import "./tokens.css";
+@import "./globals.css";
 
 @import "tailwindcss";
 
