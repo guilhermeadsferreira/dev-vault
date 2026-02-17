@@ -12,11 +12,18 @@ import { Text } from "~/components/ui/Text";
 import { loginSchema, type LoginFormValues } from "./schema";
 import styles from "./LoginForm.module.css";
 
-export interface LoginFormProps extends React.ComponentProps<"div"> {
+export interface LoginFormProps
+  extends Omit<React.ComponentProps<"div">, "onSubmit"> {
   className?: string;
+  /** Callback ao submeter com sucesso. Se omitido, usa console.log (dev). */
+  onSubmit?: (data: LoginFormValues) => void;
 }
 
-export function LoginForm({ className, ...props }: LoginFormProps) {
+export function LoginForm({
+  className,
+  onSubmit: onSubmitProp,
+  ...props
+}: LoginFormProps) {
   const {
     control,
     handleSubmit,
@@ -27,7 +34,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
   });
 
   const onSubmit = (data: LoginFormValues) => {
-    console.log(data);
+    onSubmitProp ? onSubmitProp(data) : console.log(data);
   };
 
   return (

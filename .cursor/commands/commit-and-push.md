@@ -4,6 +4,8 @@
 
 Analisar as mudanças do repositório, preparar um commit com mensagem sucinta e enviar para o remote.
 
+> **Dica:** Para revisar as mudanças com a persona React sênior antes de commitar, use `commit-and-push-with-review` ou rode `pre-commit-review` antes deste comando.
+
 ## Passos (executar em ordem)
 
 1. **Analisar mudanças**
