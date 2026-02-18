@@ -1,87 +1,39 @@
-# Welcome to React Router!
+# Dev Vault
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Projeto frontend com React Router v7 (SSR), TypeScript, CSS Modules e Tailwind.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Stack
 
-## Features
+- **React 19** + **React Router v7** (server-side rendering)
+- **TypeScript**
+- **CSS Modules** + tokens globais + Tailwind CSS
+- **React Hook Form** + **Zod** (formulários e validação)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
+## Como rodar
 
 ```bash
-npm install
+pnpm install
+pnpm dev
 ```
 
-### Development
+App em `http://localhost:5173`.
 
-Start the development server with HMR:
+## Scripts
 
-```bash
-npm run dev
-```
+| Script       | Descrição                |
+| ----------- | ------------------------ |
+| `pnpm dev`  | Servidor de desenvolvimento |
+| `pnpm build`| Build de produção        |
+| `pnpm typecheck` | Verificar tipos    |
+| `pnpm lint` | Linter                   |
+| `pnpm lint:fix` | Linter + auto-fix   |
+| `pnpm format` | Formatar código     |
 
-Your application will be available at `http://localhost:5173`.
+## Documentação
 
-## Building for Production
+Toda a documentação para desenvolvedores está em **[docs/](docs/)**:
 
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- [Arquitetura do projeto](docs/architecture.md) – mapa de pastas e fluxo
+- [React Router v7](docs/react-router.md) – como usamos loaders, actions, etc.
+- [Playbook](docs/playbook.md) – receitas passo a passo para tarefas comuns
+- [Convenções](docs/conventions.md) – referência rápida de padrões
