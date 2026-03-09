@@ -1,32 +1,80 @@
-/* Apenas layout específico do login – grid do card, painel da imagem, linha social */
-
-.cardGrid {
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .cardGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.imagePanel {
-  display: none;
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .imagePanel {
-    display: block;
-  }
-}
-
-.image {
-  position: absolute;
-  inset: 0;
-  height: 100%;
+.container {
   width: 100%;
-  object-fit: cover;
+  max-width: 460px;
+  margin-inline: auto;
+}
+
+.card {
+  width: 100%;
+  padding: calc(var(--space-8) + var(--space-2)) var(--space-7) var(--space-6);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 21, 38, 0.92);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+.brandBlock {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding-inline: var(--space-3);
+}
+
+.logo {
+  display: block;
+  width: min(240px, 100%);
+  height: auto;
+}
+
+.fields {
+  gap: var(--space-4);
+}
+
+.card :global(label) {
+  color: #c8cbe3;
+}
+
+.card :global(input[type="text"]),
+.card :global(input[type="password"]),
+.card :global(input[type="email"]) {
+  background: rgba(10, 12, 22, 0.65);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f1f3ff;
+}
+
+.card :global(input[type="text"])::placeholder,
+.card :global(input[type="password"])::placeholder,
+.card :global(input[type="email"])::placeholder {
+  color: #8e93b8;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: var(--space-1);
+  border: none;
+  background: linear-gradient(90deg, #6b46ff 0%, #9352ff 100%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.submitButton:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.rememberRow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  margin-top: calc(var(--space-3) * -1);
+  font-size: var(--text-sm);
+  color: #c8cbe3;
+  cursor: pointer;
+}
+
+.rememberCheckbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #7c3aed;
+  cursor: pointer;
 }

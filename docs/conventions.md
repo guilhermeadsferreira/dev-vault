@@ -42,6 +42,15 @@ import { HomePage } from "~/modules/home";
 - **Tokens**: `--space-*`, `--primary`, `--radius-*`, `--text-*` (ver `tokens.css`)
 - **Blocos típicos**: `container`, `header`, `content`, `footer`, `row`, `column`, `title`, `subtitle`
 
+## Ícones
+
+- Biblioteca padrão: **`lucide-react`**
+- Preferir ícones decorativos com `aria-hidden`
+- Tamanhos base para consistência visual:
+  - `14` para labels/apoio
+  - `16` para ações/menu
+  - `18` para títulos
+
 ## TypeScript
 
 - Tipos do módulo em `modules/<m>/types.ts`

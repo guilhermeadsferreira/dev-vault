@@ -20,12 +20,12 @@ export default function Login() {
   const fetcher = useFetcher();
 
   return (
-    <main className="flex items-center justify-center h-screen">
+    <main className="flex min-h-screen items-center justify-center bg-[#090d1f]">
       <Container size="md">
         <LoginForm
           onSubmit={(data) => {
             fetcher.submit(
-              { email: data.email, password: data.password },
+              { username: data.username, password: data.password },
               { method: "post", action: "/?index" }
             );
           }}

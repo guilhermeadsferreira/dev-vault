@@ -289,3 +289,39 @@ O `modules/login/LoginForm.tsx` usa:
 - [ ] `className={styles.nomeDaClasse}` (camelCase)
 - [ ] Tokens em vez de `#fff`, `16px`, etc.
 - [ ] Sem `!important`
+
+---
+
+## Receita 6: Montar um layout administrativo (shell)
+
+### Passos
+
+1. Criar composição no módulo da página (ex.: `modules/home/HomePage.tsx`) com três regiões:
+   - sidebar esquerda
+   - área central
+   - sidebar direita
+
+2. Extrair cada região para componentes do módulo:
+   - `modules/home/components/AdminSidebarLeft.tsx`
+   - `modules/home/components/AdminMainPanel.tsx`
+   - `modules/home/components/AdminSidebarRight.tsx`
+
+3. Criar CSS Modules pareados para cada bloco e manter o `HomePage` apenas como orquestrador.
+
+4. Usar `grid` no shell e breakpoints simples:
+   - desktop: 3 colunas
+   - tablet: 2 colunas
+   - mobile: 1 coluna
+
+5. Manter essa etapa sem regra de negócio:
+   - conteúdo estático
+   - placeholders
+   - sem fetch adicional no componente
+
+### Checklist
+
+- [ ] `HomePage` compõe os três blocos
+- [ ] Cada bloco tem arquivo `.tsx` + `.module.css`
+- [ ] Responsivo nos breakpoints principais
+- [ ] Inputs e botões com semântica mínima (`label`, `aria-label` quando necessário)
+- [ ] Sem lógica backend acoplada ao layout

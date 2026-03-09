@@ -2,20 +2,16 @@ import type React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "~/lib/utils";
-import { Box } from "~/components/ui/Box";
 import { Button } from "~/components/ui/Button";
-import { Card } from "~/components/ui/Card";
 import { Form, FormGroup } from "~/components/ui/Form";
 import { FormField } from "~/components/ui/FormField";
-import { Stack } from "~/components/ui/Stack";
-import { Text } from "~/components/ui/Text";
 import { loginSchema, type LoginFormValues } from "./schema";
 import styles from "./LoginForm.module.css";
 
 export interface LoginFormProps
   extends Omit<React.ComponentProps<"div">, "onSubmit"> {
   className?: string;
-  /** Callback ao submeter com sucesso. Se omitido, usa console.log (dev). */
+
   onSubmit?: (data: LoginFormValues) => void;
 }
 
@@ -30,7 +26,7 @@ export function LoginForm({
     formState: { isSubmitting },
   } = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
-    defaultValues: { email: "", password: "" },
+    defaultValues: { username: "", password: "" },
   });
 
   const onSubmit = (data: LoginFormValues) => {
@@ -38,49 +34,45 @@ export function LoginForm({
   };
 
   return (
-    <Stack
-      direction="column"
-      gap="lg"
-      as="div"
-      className={cn(className)}
-      {...props}
-    >
-      <Card padding="none" className={styles.cardGrid}>
-        <Form padding="md" onSubmit={handleSubmit(onSubmit)}>
-          <FormGroup>
-            <Stack direction="column" gap="sm" align="center">
-              <Text as="h1" variant="title">
-                Welcome back
-              </Text>
-              <Text as="p" variant="subtitle" align="center">
-                Login to your Acme Inc account
-              </Text>
-            </Stack>
-            <FormField
-              control={control}
-              name="email"
-              label="Email"
-              type="email"
-              required
-              autoComplete="email"
+    <div className={cn(styles.container, className)} {...props}>
+      <Form padding="none" onSubmit={handleSubmit(onSubmit)} className={styles.card}>
+        <div className={styles.brandBlock}>
+          <img src="/logo.png" alt="DevVault" className={styles.logo} />
+        </div>
+
+        <FormGroup className={styles.fields}>
+          <FormField
+            control={control}
+            name="username"
+            label="Usuário"
+            type="text"
+            required
+            placeholder="Usuário"
+            autoComplete="username"
+          />
+          <FormField
+            control={control}
+            name="password"
+            label="Senha"
+            type="password"
+            required
+            placeholder="Senha"
+            autoComplete="current-password"
+          />
+          <label htmlFor="remember-me" className={styles.rememberRow}>
+            <input
+              id="remember-me"
+              name="remember"
+              type="checkbox"
+              className={styles.rememberCheckbox}
             />
-            <FormField
-              control={control}
-              name="password"
-              label="Senha"
-              type="password"
-              required
-              autoComplete="current-password"
-            />
-            <Button type="submit" loading={isSubmitting}>
-              Login
-            </Button>
-          </FormGroup>
-        </Form>
-        <Box as="div" background="muted" className={styles.imagePanel}>
-          <img src="/logo.png" alt="" className={styles.image} loading="lazy" />
-        </Box>
-      </Card>
-    </Stack>
+            Lembrar-me
+          </label>
+          <Button type="submit" loading={isSubmitting} className={styles.submitButton}>
+            Entrar
+          </Button>
+        </FormGroup>
+      </Form>
+    </div>
   );
 }

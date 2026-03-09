@@ -63,7 +63,7 @@
 }
 
 .button.ghost {
-  background-color: transparent;
+  /* background-color: transparent; */
   color: var(--fg);
   border-color: transparent;
 }

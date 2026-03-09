@@ -165,6 +165,15 @@ if (isRouteErrorResponse(error)) {
 
 **Erro comum:** fazer `fetch` dentro do componente quando já existe loader. Prefira sempre o loader.
 
+## Fluxo atual da rota index
+
+No estado atual do projeto:
+
+- Se **não autenticado**: a rota index renderiza `LoginForm`.
+- Se **autenticado**: a rota index renderiza `HomePage`, que monta o shell administrativo (`AdminSidebarLeft`, `AdminMainPanel`, `AdminSidebarRight`).
+
+Isso mantém a regra: a rota decide autenticação e o módulo `home` fica responsável apenas pela UI do painel.
+
 ## Referência oficial
 
 - [React Router v7 — Documentação](https://reactrouter.com/)

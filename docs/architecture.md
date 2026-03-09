@@ -13,6 +13,7 @@ app/
 ├── components/ui/     # Componentes UI reutilizáveis (Button, Card, Form, etc.)
 ├── lib/              # Utilitários genéricos (session.server.ts, utils.ts)
 ├── modules/          # Domínio por feature (home, login)
+│   └── home/components/ # Blocos do shell admin (sidebars e painel central)
 ├── routes/           # Arquivos de rota (uma URL = um arquivo)
 ├── styles/           # Tokens globais, reset, app.css
 ├── root.tsx          # Layout HTML base e ErrorBoundary
@@ -64,3 +65,11 @@ O arquivo `app/routes/_index.tsx`:
 - **componente**: se autenticado → `<HomePage />`, senão → `<LoginForm />`.
 
 Os módulos `modules/home/` e `modules/login/` não sabem nada de rotas. A rota só importa e compõe.
+
+No módulo `home`, o `HomePage` é um shell de layout administrativo com composição por blocos:
+
+- `AdminSidebarLeft`
+- `AdminMainPanel` (usa `QuickActionsGrid` + `quickActionsConfig`)
+- `AdminSidebarRight`
+
+O `QuickActionsGrid` é um componente reutilizável que recebe uma lista de itens (`button` ou `input`) e renderiza um grid de ações rápidas.

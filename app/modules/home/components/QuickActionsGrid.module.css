@@ -1,0 +1,81 @@
+.header {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #9f78ff;
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.actionCard {
+  width: 100%;
+  min-height: 44px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.actionCard:hover:not(:disabled):not([aria-busy="true"]) {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.actionCardDanger {
+  width: 100%;
+  min-height: 44px;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #ffe2e2;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.actionCardDanger:hover:not(:disabled):not([aria-busy="true"]) {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.actionCardPrimary {
+  width: 100%;
+  min-height: 44px;
+  justify-content: center;
+  background: rgba(139, 92, 246, 0.1);
+  border: 2px solid #8b5cf6;
+  color: #8b5cf6;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.actionCardPrimary:hover:not(:disabled):not([aria-busy="true"]) {
+  background: rgba(139, 92, 246, 0.18);
+  color: #c4b5fd;
+  border-color: #a78bfa;
+}
+
+.actionInput {
+  height: 100%;
+  min-height: 44px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

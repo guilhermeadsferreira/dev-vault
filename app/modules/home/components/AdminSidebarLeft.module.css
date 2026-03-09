@@ -1,0 +1,74 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: 100%;
+  min-height: 100%;
+  padding: var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  background: rgba(18, 21, 38, 0.84);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.searchBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.searchLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: #c8cbe3;
+}
+
+.labelIcon {
+  color: #8e93b8;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuButton {
+  justify-content: flex-start;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #dfe2ff;
+  background: rgba(8, 10, 19, 0.55);
+}
+
+.logoutForm {
+  margin-top: auto;
+}
+
+.logoutButton {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.sidebar :global(input) {
+  background: rgba(8, 10, 19, 0.65);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f1f3ff;
+}
+
+.sidebar :global(input)::placeholder {
+  color: #8e93b8;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    gap: var(--space-4);
+    min-height: auto;
+    padding: var(--space-3);
+  }
+}
